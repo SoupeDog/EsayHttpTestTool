@@ -1,6 +1,9 @@
 package org.xavier;
 
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /**
  * 描述信息：<br/>
  *
@@ -9,5 +12,9 @@ package org.xavier;
  * @date 2017/7/25
  * @since Jdk 1.8
  */
+@SpringBootApplication
 public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 }
