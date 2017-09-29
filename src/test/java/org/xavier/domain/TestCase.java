@@ -32,6 +32,7 @@ public class TestCase extends BaseTestCase {
 
         // init httpMethod
         httpMethod = HttpMethod.GET;
+
         // init mediaType
         mediaType = MediaType.APPLICATION_JSON_UTF8;
 
