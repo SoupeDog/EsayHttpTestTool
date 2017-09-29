@@ -2,7 +2,6 @@ package org.xavier.emitter;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.xavier.factory.RestTemplateFactory;
@@ -23,7 +22,7 @@ public class HttpEmitter {
      */
     private static RestTemplate restTemplate = RestTemplateFactory.getInstance();
 
-    public ResponseEntity send(String url, HttpMethod httpMethod, HttpEntity entity, MediaType mediaType) {
+    public ResponseEntity send(String url, HttpMethod httpMethod, HttpEntity entity) {
         ResponseEntity responseEntity = restTemplate.exchange(url, httpMethod, entity, String.class);
         return responseEntity;
     }

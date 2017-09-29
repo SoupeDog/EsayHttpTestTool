@@ -71,7 +71,7 @@ public abstract class BaseTestCase {
      */
     private void send() {
         startTs = System.currentTimeMillis();
-        responseEntity = httpEmitter.send(url, httpMethod, httpEntity, mediaType);
+        responseEntity = httpEmitter.send(url, httpMethod, httpEntity);
         endTs = System.currentTimeMillis();
     }
 
@@ -128,8 +128,24 @@ public abstract class BaseTestCase {
     }
 
 
-    public String getData(String key) {
-        return DataCenterFactory.getInstance().getData(key).toString();
+    public String getDataString(String key) {
+        String result;
+        if (DataCenterFactory.getInstance().getData(key) != null) {
+            result = DataCenterFactory.getInstance().getData(key).toString();
+        } else {
+            result = null;
+        }
+        return result;
+    }
+
+    public Object getDataObject(String key) {
+        String result;
+        if (DataCenterFactory.getInstance().getData(key) != null) {
+            result = DataCenterFactory.getInstance().getData(key).toString();
+        } else {
+            result = null;
+        }
+        return result;
     }
 
     public Boolean setData(String key, Object val) {
